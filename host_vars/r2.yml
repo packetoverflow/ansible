@@ -1,0 +1,4 @@
+---
+e00:
+    desc: "Loopback100 Interface"
+    ip: 10.0.100.15

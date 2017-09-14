@@ -1,0 +1,17 @@
+---
+- name: cisco router configuration
+  hosts: cisco_routers
+  gather_facts: no
+  connection: local
+ 
+  tasks:
+  
+  - name: configure interface
+    ios_config:
+      provider: "{{ provider }}"
+      lines:
+      - description {{ item.desc }}
+      - ip add {{ item.ip }} {{ item.mask }}
+      - ip nat inside
+      parents: interface {{ item.name }}
+    with_items: "{{ loopback100_int }}"
