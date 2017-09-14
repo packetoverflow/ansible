@@ -1,3 +1,2 @@
 [cisco_routers]
-#R1 ansible_host=10.1.255.21
-10.1.255.21
+R1 ansible_host=10.1.255.21
