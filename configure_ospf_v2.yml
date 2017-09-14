@@ -1,0 +1,27 @@
+---
+- hosts: cisco_routers
+  gather_facts: true
+  connection: local
+
+  tasks: 
+    
+   - name: Configure OSFP 100 and put all interfaces into OSPF Area 0
+     ios_config:
+       provider: "{{ provider }}"
+       lines:
+       - network 10.0.0.0 0.255.255.255 area 0
+       parents: router ospf 100
+
+   - name: SAVE CONFIG 
+     ios_command:
+       provider: "{{ provider }}"
+       commands:
+         - write memory
+
+   - name: Verify OSPF interface is Active
+     ios_command:
+       provider: "{{ provider }}"
+       commands: 
+         - sh run | sec router ospf 
+       waitfor:
+         - result[0] contains 'router ospf 100'

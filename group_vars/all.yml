@@ -1,6 +1,6 @@
 ---
 provider: 
-  host: "{{ ansible_hostname }}"
+  host: "{{ ansible_host }}"
   username: admin
   password: admin
 
