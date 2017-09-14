@@ -13,11 +13,11 @@
          password: "{{provider.password}}"
          host: "{{inventory_hostname}}"
     
-   - name: Configure OSFP 100 and put all interfaces into Area 0
+   - name: Configure OSFP 100 and put all interfaces into OSPF Area 0
      ios_config:
        provider: "{{connection}}"
        lines:
-       - network 10.0.0.0 0.0.0.255 area 0
+       - network 10.0.0.0 0.255.255.255 area 0
        parents: router ospf 100
 
    - name: SAVE CONFIG 

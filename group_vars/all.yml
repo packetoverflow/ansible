@@ -3,3 +3,7 @@ provider:
   host: "{{ ansible_hostname }}"
   username: admin
   password: admin
+
+ansible_connection: local
+ansible_ssh_user: admin 
+ansible_ssh_pass: admin
