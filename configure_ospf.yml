@@ -5,7 +5,7 @@
 
   tasks: 
 
-   - name: Define Connections
+   - name: Define Connection
      set_fact:
        connection:
          authorize: yes
