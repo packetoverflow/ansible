@@ -1,3 +1,4 @@
 [cisco_routers]
 r1 ansible_host=10.1.255.21 ansible_hostname=r1
 r2 ansible_host=10.1.255.22 ansible_hostname=r2
+r3 ansible_host=10.1.255.22 ansible_hostname=r3
